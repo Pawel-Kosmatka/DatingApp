@@ -34,7 +34,7 @@ namespace API.Controllers
 
             await AddAppUserToDatabase(user);
 
-            return new UserDto { UserName = user.UserName, Token = _tokenService.CreateToken(user) };
+            return new UserDto(user.UserName, _tokenService.CreateToken(user));
         }
 
         [HttpPost("login")]
@@ -46,7 +46,7 @@ namespace API.Controllers
 
             if (!IsPasswordValid(user, loginDto)) return Unauthorized("Invalid password");
 
-            return new UserDto { UserName = user.UserName, Token = _tokenService.CreateToken(user) };
+            return new UserDto(UserName: user.UserName, _tokenService.CreateToken(user));
         }
 
         private async Task<AppUser> GetUserFromDatabase(string userName)
