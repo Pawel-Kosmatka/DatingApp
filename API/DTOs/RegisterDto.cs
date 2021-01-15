@@ -2,5 +2,12 @@
 
 namespace API.DTOs
 {
-    public record RegisterDto([Required] string UserName, [Required][StringLength(8, MinimumLength =4)] string Password);
+    public record RegisterDto
+    {
+        [Required]
+        public string UserName { get; set; }
+        [Required]
+        [StringLength(8, MinimumLength = 4)]
+        public string Password { get; set; }
+    };
 }
