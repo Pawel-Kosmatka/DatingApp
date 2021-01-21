@@ -34,7 +34,7 @@ namespace API.Controllers
 
             await AddAppUserToDatabase(user);
 
-            return new UserDto(user.UserName, _tokenService.CreateToken(user));
+            return new UserDto(user.UserName, _tokenService.CreateToken(user), user.Photos.FirstOrDefault(p => p.IsMain)?.Url);
         }
 
         [HttpPost("login")]
@@ -46,12 +46,12 @@ namespace API.Controllers
 
             if (!IsPasswordValid(user, loginDto)) return Unauthorized("Invalid password");
 
-            return new UserDto(UserName: user.UserName, _tokenService.CreateToken(user));
+            return new UserDto(UserName: user.UserName, _tokenService.CreateToken(user), user.Photos.FirstOrDefault(p => p.IsMain)?.Url);
         }
 
         private async Task<AppUser> GetUserFromDatabase(string userName)
         {
-            return await _context.Users.SingleOrDefaultAsync(u => u.UserName == userName.ToLower());
+            return await _context.Users.Include(u => u.Photos).SingleOrDefaultAsync(u => u.UserName == userName.ToLower());
         }
 
         private static bool IsPasswordValid(AppUser user, LoginDto loginDto)
