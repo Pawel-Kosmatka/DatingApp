@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
 using AutoMapper;
+using API.Helpers;
+using API.Extensions;
 
 namespace API.Data
 {
@@ -30,11 +32,23 @@ namespace API.Data
                 .SingleOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<MemberDto>> GetMembersAsync()
+        public async Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams)
         {
-            return await _context.Users
-                .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
-                .ToListAsync();
+            var minDOB = DateTime.Today.AddYears(-userParams.MaxAge - 1);
+            var maxDOB = DateTime.Today.AddYears(-userParams.MinAge);
+
+            var query = _context.Users
+                .Where(u => u.UserName != userParams.CurrentUserName)
+                .Where(u => u.Gender == userParams.Gender)
+                .Where(u => u.DateOfBirth >= minDOB && u.DateOfBirth <= maxDOB);
+
+            query = userParams.OrderBy switch
+            {
+                "created" => query.OrderByDescending(u => u.Created),
+                _ => query.OrderByDescending(u => u.LastActive)
+            };
+
+            return await PagedList<MemberDto>.CreateAsync(query.ProjectTo<MemberDto>(_mapper.ConfigurationProvider).AsNoTracking(), userParams.PageNumber, userParams.PageSize);
         }
 
         public async Task<AppUser> GetUserByIdAsync(int id)
