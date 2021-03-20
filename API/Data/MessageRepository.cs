@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
 using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
@@ -66,6 +67,7 @@ namespace API.Data
         {
             var query = _context.Messages
                 .OrderByDescending(m => m.MessageSent)
+                .MarkUnreadAsRead(messageParams.UserName)
                 .ProjectTo<MessageDto>(_mapper.ConfigurationProvider)
                 .AsQueryable();
 
