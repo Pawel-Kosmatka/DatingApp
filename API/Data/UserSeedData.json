@@ -1,5 +1,4 @@
-[
-  {
+[{
     "UserName": "Lea",
     "Gender": "female",
     "DateOfBirth": "1977-07-20",
@@ -11,12 +10,11 @@
     "Interests": "Elit consequat dolor laborum fugiat commodo tempor nulla adipisicing est excepteur Lorem do qui.",
     "City": "Fruitdale",
     "Country": "Christmas Island",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/women/8.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/women/8.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Tanisha",
@@ -30,12 +28,11 @@
     "Interests": "Deserunt ad ipsum consequat laboris qui cillum excepteur elit sit do.",
     "City": "Twilight",
     "Country": "French Southern Territories",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/women/32.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/women/32.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Emma",
@@ -49,12 +46,11 @@
     "Interests": "Laborum tempor proident cupidatat tempor aute consequat id.",
     "City": "Reno",
     "Country": "Botswana",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/women/85.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/women/85.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Camille",
@@ -68,12 +64,11 @@
     "Interests": "Nisi anim deserunt cillum aliquip est.",
     "City": "Hiko",
     "Country": "Micronesia",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/women/47.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/women/47.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Alba",
@@ -87,12 +82,11 @@
     "Interests": "Laboris elit eiusmod ut occaecat in eu ut non deserunt occaecat amet.",
     "City": "Harviell",
     "Country": "Jamaica",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/women/99.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/women/99.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Davidson",
@@ -106,12 +100,11 @@
     "Interests": "Ad mollit commodo commodo eiusmod.",
     "City": "Thynedale",
     "Country": "Romania",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/men/76.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/men/76.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Garcia",
@@ -125,12 +118,11 @@
     "Interests": "Eiusmod occaecat excepteur elit incididunt aliquip aliqua.",
     "City": "Stockwell",
     "Country": "Comoros",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/men/18.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/men/18.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Mack",
@@ -144,12 +136,11 @@
     "Interests": "Eiusmod minim aliqua cupidatat officia duis sit ullamco laboris elit quis occaecat nisi adipisicing deserunt.",
     "City": "Tonopah",
     "Country": "Ukraine",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/men/87.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/men/87.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Morgan",
@@ -163,12 +154,11 @@
     "Interests": "Officia non voluptate aute sunt.",
     "City": "Reinerton",
     "Country": "Tajikistan",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/men/32.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/men/32.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   },
   {
     "UserName": "Branch",
@@ -182,11 +172,10 @@
     "Interests": "In nulla Lorem amet consectetur ut Lorem amet do adipisicing sunt ad.",
     "City": "Sanborn",
     "Country": "Cook Islands",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/men/13.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": [{
+      "Url": "https://randomuser.me/api/portraits/men/13.jpg",
+      "IsMain": true,
+      "IsApproved": true
+    }]
   }
 ]

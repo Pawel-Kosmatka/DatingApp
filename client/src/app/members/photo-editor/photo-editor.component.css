@@ -11,3 +11,15 @@ img.img-thumbnail {
 input[type=file] {
   color: transparent;
 }
+
+.text-over-img {
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img.img-blured {
+  opacity: 0.2;
+}

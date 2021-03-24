@@ -1,1 +1,36 @@
-<p>photo-management works!</p>
+<div class="container">
+    <div class="row" *ngIf="photos?.length === 0">
+        <h3>No unaproved photos</h3>
+    </div>
+    <div class="row">
+        <ul class="list-inline">
+            <li *ngFor="let photo of photos" class="list-inline-item">
+                <div class="container-fluid mb-3">
+                    <div class="row justify-content-center">
+                        <h1>{{photo.userName}}</h1>
+                    </div>
+                    <div class="row justify-content-center img-container">
+                        <img src="{{photo.url}}" alt="{{photo.userName}}" class="img-thumbnail p-1"
+                            (click)="enlargePhoto(photo, template)">
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <button class="btn btn-success btn-md btn-block"
+                                (click)="approvePhoto(photo.id)">Approve</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-danger btn-md btn-block"
+                                (click)="rejectPhoto(photo.id)">Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-template #template>
+    <div class="modal-body">
+        <img class="img-fluid" src="{{currentPhoto.url}}" alt="{{currentPhoto.userName}}">
+    </div>
+</ng-template>

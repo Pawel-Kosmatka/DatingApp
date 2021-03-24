@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using API.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Extensions
 {
@@ -17,6 +18,12 @@ namespace API.Extensions
                     message.DateRead = DateTime.UtcNow;
                 }
             }
+            return query;
+        }
+        public static IQueryable<AppUser> IgnoreQueryFilterForLoggedUser(this IQueryable<AppUser> query, string currentUserName, bool isCurrentUser)
+        {
+            if (isCurrentUser) query = query.IgnoreQueryFilters();
+
             return query;
         }
     }
